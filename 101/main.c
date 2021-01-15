@@ -5,9 +5,35 @@
 
 //symmetric-tree
 
+bool isEquale(struct TreeNode *left, struct TreeNode *right)
+{
+    if (left == NULL && right == NULL)
+    {
+        return true;
+    }
+    if (left != NULL && right != NULL)
+    {
+        // 进一步判断一下 左右的结果
+        if (left->val != right->val)
+        {
+            return false;
+        }
+        return isEquale(left->left, right->right) && isEquale(left->right, right->left);
+    }
+    else
+    {
+        return false;
+    }
+}
+
 bool isSymmetric(struct TreeNode *root)
 {
-    return true;
+    if (root == NULL)
+    {
+        return true;
+    }
+
+    return isEquale(root->left, root->right);
 }
 
 void main()

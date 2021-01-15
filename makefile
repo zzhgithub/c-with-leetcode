@@ -11,7 +11,6 @@ main.o:
 
 run:
 	${CC} main.o node.o -o test -lm
-	test
 
 clean:
 	rm test *.o
