@@ -62,3 +62,31 @@ void visiable(struct TreeNode *root)
 {
     r(root, handleVal);
 }
+
+/**
+ * 初始化 后面一个标识子 node 个数 然后
+ * todo??
+ */
+struct Node *initNode(int *a, int arraySize)
+{
+    return NULL;
+}
+
+struct Node *buildNode(int val, int numChildern)
+{
+    struct Node *root = (struct Node *)malloc(sizeof(struct Node));
+    root->val = val;
+    root->numChildren = numChildern;
+
+    if (numChildern == 0)
+    {
+        root->children = NULL;
+    }
+    else
+    {
+        struct Node **childern = (struct Node **)malloc(sizeof(struct Node *) * numChildern);
+        root->children = childern;
+    }
+
+    return root;
+}
