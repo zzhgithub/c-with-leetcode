@@ -10,4 +10,6 @@ struct TreeNode
 
 struct TreeNode *init(int *a, int arraySize);
 
+void visiable(struct TreeNode *root);
+
 #endif

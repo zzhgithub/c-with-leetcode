@@ -1,5 +1,6 @@
 #include "node.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 struct TreeNode *createNode(int *a, int arraySize, int index);
 // 二叉树初始化
@@ -38,4 +39,26 @@ struct TreeNode *createNode(int *a, int arraySize, int index)
     root->right = createNode(a, arraySize, 2 * index + 1);
 
     return root;
+}
+
+void handleVal(int val)
+{
+    printf("Node is %d\n", val);
+}
+
+void r(struct TreeNode *root, void (*handle)(int))
+{
+    if (root == NULL)
+    {
+        printf("Null Node;\n");
+        return;
+    }
+    handle(root->val);
+    r(root->left, handle);
+    r(root->right, handle);
+}
+
+void visiable(struct TreeNode *root)
+{
+    r(root, handleVal);
 }
