@@ -77,7 +77,7 @@ int kthLargest(struct TreeNode *root, int k)
     {
         return -1;
     }
-    struct LinkList *head = ret->next;
+    struct LinkList *head = ret;
     for (int i = 0; i < k; i++)
     {
         head = head->next;
@@ -85,10 +85,14 @@ int kthLargest(struct TreeNode *root, int k)
     return head->val;
 }
 
+/**
+ * 注意上面的解法 非常不优雅 因为不知道 二叉搜索树中序遍历的 序列有序！
+ */
 int main(void)
 {
     int test[] = {3, 1, 4, NULL, 2};
-    struct TreeNode *root = init(test, sizeof(root) / sizeof(int));
-    int ret = kthLargest(root, 3);
+    struct TreeNode *root = init(test, sizeof(test) / sizeof(int));
+
+    int ret = kthLargest(root, 1);
     printf("%d", ret);
 }

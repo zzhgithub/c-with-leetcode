@@ -1,6 +1,6 @@
 #ifndef NODE_HEAD
 #define NODE_HEAD
-
+#define LEN(x, y) (sizeof(x) / sizeof(y))
 struct TreeNode
 {
     int val;
