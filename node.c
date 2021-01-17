@@ -28,7 +28,7 @@ struct TreeNode *createNode(int *a, int arraySize, int index)
     }
 
     int val = a[index - 1];
-    if (val == NULL)
+    if (val <= INT16_MIN)
     {
         return NULL;
     }

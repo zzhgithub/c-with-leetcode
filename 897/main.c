@@ -34,7 +34,7 @@ struct TreeNode *increasingBST(struct TreeNode *root)
 
 int main(void)
 {
-    int test[] = {5, 3, 6, 2, 4, NULL, 8, 1, NULL, NULL, NULL, 7, 9};
+    int test[] = {5, 3, 6, 2, 4, INT16_MIN, 8, 1, INT16_MIN, INT16_MIN, INT16_MIN, 7, 9};
     struct TreeNode *root = init(test, sizeof(test) / sizeof(int));
     visiable(increasingBST(root));
 }
