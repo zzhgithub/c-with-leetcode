@@ -1,16 +1,14 @@
 CC = gcc
 DIR = 101
 
-test: node.o main.o run
-
-node.o: node.h node.c
-	${CC} -c node.c
+test: main.o
 
 main.o:
-	${CC} -c ${DIR}/main.c
-
-run:
-	${CC} main.o node.o -o test -lm
+	${CC} -gdwarf-2 -g3  ${DIR}/main.c node.h node.c -lm --debug
 
 clean:
-	rm test *.o
+	rm -rf a.out  *.gch *.dSYM
+
+debug:
+	lldb a.out
+	b main
