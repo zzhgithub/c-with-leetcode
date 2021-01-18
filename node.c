@@ -60,6 +60,14 @@ void r(struct TreeNode *root, void (*handle)(int))
 
 void visiable(struct TreeNode *root)
 {
+    // todo 打印成 一种更加优美的方式
+    //    比如:
+    //     1
+    //    /  \
+    //   2    2
+    //  / \  / \
+    // 33  1 2  3
+    // 自己给自己的难题 一种排版算法！
     r(root, handleVal);
 }
 
