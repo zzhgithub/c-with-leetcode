@@ -22,6 +22,7 @@ struct TreeNode *init(int *a, int arraySize)
  */
 struct TreeNode *createNode(int *a, int arraySize, int index)
 {
+    // printf("%d,%d\n", arraySize, index);
     if (index > arraySize)
     {
         return NULL;
@@ -30,6 +31,7 @@ struct TreeNode *createNode(int *a, int arraySize, int index)
     int val = a[index - 1];
     if (val <= INT16_MIN)
     {
+        // printf("%d\n", val);
         return NULL;
     }
 
