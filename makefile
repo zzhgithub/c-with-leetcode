@@ -1,5 +1,5 @@
 CC = gcc
-DIR = ms_0304
+DIR = 654
 
 test: main.o
 
