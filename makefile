@@ -1,5 +1,5 @@
 CC = gcc
-DIR = 1530
+DIR = 103
 
 test: main.o
 
