@@ -1,5 +1,5 @@
 CC = gcc
-DIR = 222
+DIR = offer26
 
 test: main.o
 
